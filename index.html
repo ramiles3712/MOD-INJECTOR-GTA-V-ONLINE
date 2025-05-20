@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA V Online Enhanced | Mod Injector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        .orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 246, 159, 0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="flex flex-col items-center mb-10">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-gamepad text-4xl mr-3 text-blue-500"></i>
+                <h1 class="text-4xl font-bold orbitron gradient-text">GTA V ONLINE ENHANCED</h1>
+            </div>
+            <p class="text-lg text-gray-400 text-center max-w-2xl">
+                Advanced mod injection platform for GTA V Online. Inject money, unlock outfits, vehicles and achievements with ease.
+            </p>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="bg-gray-800 bg-opacity-50 rounded-xl p-6 backdrop-blur-sm border border-gray-700">
+            <!-- Status Bar -->
+            <div class="bg-gray-900 rounded-lg p-4 mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                        <span class="text-sm font-medium">Connected to GTA V</span>
+                    </div>
+                    <span class="text-xs text-gray-400">v2.4.1</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div class="progress-bar" style="width: 75%"></div>
+                </div>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="flex border-b border-gray-700 mb-6">
+                <button class="tab-btn px-4 py-2 font-medium text-blue-400 border-b-2 border-blue-500" data-tab="money">Money</button>
+                <button class="tab-btn px-4 py-2 font-medium text-gray-400 hover:text-blue-400" data-tab="outfits">Outfits</button>
+                <button class="tab-btn px-4 py-2 font-medium text-gray-400 hover:text-blue-400" data-tab="vehicles">Vehicles</button>
+                <button class="tab-btn px-4 py-2 font-medium text-gray-400 hover:text-blue-400" data-tab="achievements">Achievements</button>
+                <button class="tab-btn px-4 py-2 font-medium text-gray-400 hover:text-blue-400" data-tab="settings">Settings</button>
+            </div>
+            
+            <!-- Tab Contents -->
+            <div id="money" class="tab-content active">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-coins text-yellow-400 mr-3"></i>
+                    Money Injection
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-900 rounded-xl p-6">
+                        <h3 class="text-lg font-semibold mb-4">Quick Cash</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="btn-money bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition">
+                                $100K
+                            </button>
+                            <button class="btn-money bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition">
+                                $500K
+                            </button>
+                            <button class="btn-money bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition">
+                                $1M
+                            </button>
+                            <button class="btn-money bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition">
+                                $5M
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-900 rounded-xl p-6">
+                        <h3 class="text-lg font-semibold mb-4">Custom Amount</h3>
+                        <div class="flex">
+                            <input type="number" class="flex-1 bg-gray-800 border border-gray-700 rounded-l-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter amount">
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 rounded-r-lg transition">
+                                Inject
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">Max safe amount per session: $10M</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <h3 class="text-lg font-semibold mb-4 flex items-center">
+                        <i class="fas fa-shield-alt text-green-400 mr-2"></i>
+                        Safety Features
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="safe-mode" class="h-4 w-4 text-blue-600 rounded" checked>
+                            <label for="safe-mode" class="ml-2 text-sm">Safe Mode</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="transaction-log" class="h-4 w-4 text-blue-600 rounded" checked>
+                            <label for="transaction-log" class="ml-2 text-sm">Transaction Log</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="random-delay" class="h-4 w-4 text-blue-600 rounded">
+                            <label for="random-delay" class="ml-2 text-sm">Random Delay</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="outfits" class="tab-content">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-tshirt text-purple-400 mr-3"></i>
+                    Outfits & Clothing
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="feature-card bg-gray-900 rounded-xl p-6 cursor-pointer transition hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-500 bg-opacity-20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-user-tie text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Premium Outfits</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Unlock all premium outfits including casino, VIP and exclusive clothing.</p>
+                        <button class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-sm transition">
+                            Unlock All
+                        </button>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-900 rounded-xl p-6 cursor-pointer transition hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-500 bg-opacity-20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-mask text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Special Costumes</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Access all special costumes like alien, monkey, and Halloween outfits.</p>
+                        <button class="mt-4 bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg text-sm transition">
+                            Unlock All
+                        </button>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-900 rounded-xl p-6 cursor-pointer transition hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-500 bg-opacity-20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-vest text-green-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Armor & Utility</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Get all armor variants and utility clothing like parachutes and bags.</p>
+                        <button class="mt-4 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg text-sm transition">
+                            Unlock All
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <h3 class="text-lg font-semibold mb-4">Custom Outfit Creator</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Category</label>
+                            <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Tops</option>
+                                <option>Pants</option>
+                                <option>Shoes</option>
+                                <option>Accessories</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Item</label>
+                            <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Select an item</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg transition">
+                        <i class="fas fa-magic mr-2"></i> Create Custom Outfit
+                    </button>
+                </div>
+            </div>
+            
+            <div id="vehicles" class="tab-content">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-car text-red-400 mr-3"></i>
+                    Vehicle Spawner
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-gray-900 rounded-xl p-4 cursor-pointer hover:bg-gray-800 transition text-center">
+                        <div class="bg-gray-800 rounded-lg p-3 mb-3">
+                            <i class="fas fa-car-side text-red-400 text-2xl"></i>
+                        </div>
+                        <h3 class="font-medium">Super Cars</h3>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl p-4 cursor-pointer hover:bg-gray-800 transition text-center">
+                        <div class="bg-gray-800 rounded-lg p-3 mb-3">
+                            <i class="fas fa-motorcycle text-yellow-400 text-2xl"></i>
+                        </div>
+                        <h3 class="font-medium">Motorcycles</h3>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl p-4 cursor-pointer hover:bg-gray-800 transition text-center">
+                        <div class="bg-gray-800 rounded-lg p-3 mb-3">
+                            <i class="fas fa-helicopter text-blue-400 text-2xl"></i>
+                        </div>
+                        <h3 class="font-medium">Aircraft</h3>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl p-4 cursor-pointer hover:bg-gray-800 transition text-center">
+                        <div class="bg-gray-800 rounded-lg p-3 mb-3">
+                            <i class="fas fa-ship text-green-400 text-2xl"></i>
+                        </div>
+                        <h3 class="font-medium">Boats</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold mb-4">Vehicle Search</h3>
+                            <div class="relative">
+                                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search vehicles...">
+                                <i class="fas fa-search absolute left-3 top-3.5 text-gray-400"></i>
+                            </div>
+                            <div class="mt-4 h-64 overflow-y-auto pr-2">
+                                <div class="vehicle-item bg-gray-800 rounded-lg p-3 mb-2 cursor-pointer hover:bg-gray-700 transition">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-car text-red-400 mr-3"></i>
+                                        <span>Adder</span>
+                                    </div>
+                                </div>
+                                <div class="vehicle-item bg-gray-800 rounded-lg p-3 mb-2 cursor-pointer hover:bg-gray-700 transition">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-car text-red-400 mr-3"></i>
+                                        <span>Oppressor MKII</span>
+                                    </div>
+                                </div>
+                                <div class="vehicle-item bg-gray-800 rounded-lg p-3 mb-2 cursor-pointer hover:bg-gray-700 transition">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-car text-red-400 mr-3"></i>
+                                        <span>T20</span>
+                                    </div>
+                                </div>
+                                <!-- More vehicles would be listed here -->
+                            </div>
+                        </div>
+                        
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold mb-4">Vehicle Customization</h3>
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Color</label>
+                                    <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option>Primary Color</option>
+                                        <option>Red</option>
+                                        <option>Blue</option>
+                                        <option>Green</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Wheels</label>
+                                    <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option>Wheel Type</option>
+                                        <option>Sport</option>
+                                        <option>Off-Road</option>
+                                        <option>Tuner</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium mb-2">Performance</label>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="turbo" class="h-4 w-4 text-blue-600 rounded">
+                                        <label for="turbo" class="ml-2 text-sm">Turbo Tuning</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="bulletproof" class="h-4 w-4 text-blue-600 rounded">
+                                        <label for="bulletproof" class="ml-2 text-sm">Bulletproof Tires</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg transition">
+                                <i class="fas fa-car-side mr-2"></i> Spawn Vehicle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="achievements" class="tab-content">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-trophy text-yellow-400 mr-3"></i>
+                    Achievements Unlocker
+                </h2>
+                
+                <div class="bg-gray-900 rounded-xl p-6 mb-6">
+                    <h3 class="text-lg font-semibold mb-4">Quick Unlocks</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button class="btn-achievement bg-yellow-600 hover:bg-yellow-700 text-white py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-trophy mr-2"></i> All Trophies
+                        </button>
+                        <button class="btn-achievement bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-medal mr-2"></i> All Medals
+                        </button>
+                        <button class="btn-achievement bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-award mr-2"></i> All Awards
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <h3 class="text-lg font-semibold mb-4">Selective Unlocks</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="text-left border-b border-gray-700">
+                                    <th class="pb-3 pl-2">Achievement</th>
+                                    <th class="pb-3">Description</th>
+                                    <th class="pb-3 pr-2 text-right">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-800 hover:bg-gray-800 transition">
+                                    <td class="py-3 pl-2">The Big Score</td>
+                                    <td>Complete the final heist</td>
+                                    <td class="pr-2 text-right">
+                                        <button class="text-xs bg-gray-700 hover:bg-blue-600 text-white py-1 px-3 rounded-full transition">
+                                            Unlock
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-gray-800 hover:bg-gray-800 transition">
+                                    <td class="py-3 pl-2">Career Criminal</td>
+                                    <td>Complete all heists</td>
+                                    <td class="pr-2 text-right">
+                                        <button class="text-xs bg-gray-700 hover:bg-blue-600 text-white py-1 px-3 rounded-full transition">
+                                            Unlock
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-gray-800 hover:bg-gray-800 transition">
+                                    <td class="py-3 pl-2">Numero Uno</td>
+                                    <td>Win in all game modes</td>
+                                    <td class="pr-2 text-right">
+                                        <button class="text-xs bg-gray-700 hover:bg-blue-600 text-white py-1 px-3 rounded-full transition">
+                                            Unlock
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- More achievements would be listed here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="settings" class="tab-content">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-cog text-gray-400 mr-3"></i>
+                    Mod Settings
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-900 rounded-xl p-6">
+                        <h3 class="text-lg font-semibold mb-4">Injection Settings</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="block text-sm font-medium">Stealth Mode</label>
+                                    <p class="text-xs text-gray-400">Makes injections harder to detect</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="block text-sm font-medium">Auto-Updates</label>
+                                    <p class="text-xs text-gray-400">Keep mod updated automatically</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="block text-sm font-medium">Error Logging</label>
+                                    <p class="text-xs text-gray-400">Help improve the mod by sending error reports</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-900 rounded-xl p-6">
+                        <h3 class="text-lg font-semibold mb-4">Appearance</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Theme</label>
+                                <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option>Dark (Default)</option>
+                                    <option>Light</option>
+                                    <option>Amoled</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Accent Color</label>
+                                <div class="flex space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-blue-500 cursor-pointer border-2 border-blue-300"></div>
+                                    <div class="w-8 h-8 rounded-full bg-purple-500 cursor-pointer"></div>
+                                    <div class="w-8 h-8 rounded-full bg-red-500 cursor-pointer"></div>
+                                    <div class="w-8 h-8 rounded-full bg-green-500 cursor-pointer"></div>
+                                    <div class="w-8 h-8 rounded-full bg-yellow-500 cursor-pointer"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Animation Speed</label>
+                                <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option>Normal</option>
+                                    <option>Fast</option>
+                                    <option>Instant</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <h3 class="text-lg font-semibold mb-4">Injector Controls</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition">
+                            <i class="fas fa-play mr-2"></i> Start Injector
+                        </button>
+                        <button class="bg-gray-700 hover:bg-gray-600 text-white py-3 px-4 rounded-lg transition">
+                            <i class="fas fa-sync-alt mr-2"></i> Restart Injector
+                        </button>
+                        <button class="bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg transition">
+                            <i class="fas fa-stop mr-2"></i> Stop Injector
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-discord"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
+            </div>
+            <p>GTA V Online Enhanced Mod Injector v2.4.1</p>
+            <p class="mt-1">This is for educational purposes only. Using mods in GTA Online may result in account bans.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all tabs and buttons
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('text-blue-400', 'border-b-2', 'border-blue-500');
+                    b.classList.add('text-gray-400');
+                });
+                
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
+                btn.classList.remove('text-gray-400');
+                btn.classList.add('text-blue-400', 'border-b-2', 'border-blue-500');
+                
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Money injection buttons
+        document.querySelectorAll('.btn-money').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Animation effect
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Injecting...';
+                btn.classList.add('cursor-not-allowed', 'opacity-75');
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-check-circle mr-1"></i> Injected!';
+                    setTimeout(() => {
+                        const amount = btn.textContent.trim().replace('$', '').replace('K', '000').replace('M', '000000');
+                        btn.textContent = `$${amount.includes('000000') ? amount.replace('000000', 'M') : amount.replace('000', 'K')}`;
+                        btn.classList.remove('cursor-not-allowed', 'opacity-75');
+                    }, 1000);
+                }, 1500);
+            });
+        });
+        
+        // Achievement unlock buttons
+        document.querySelectorAll('.btn-achievement').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Animation effect
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Unlocking...';
+                btn.classList.add('cursor-not-allowed', 'opacity-75');
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-check-circle mr-1"></i> Unlocked!';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('cursor-not-allowed', 'opacity-75');
+                    }, 1000);
+                }, 1500);
+            });
+        });
+        
+        // Vehicle spawn animation
+        document.querySelectorAll('.vehicle-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-car text-red-400 mr-3"></i>
+                            <span>${item.textContent.trim()}</span>
+                        </div>
+                        <i class="fas fa-spinner fa-spin text-blue-400"></i>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    item.innerHTML = `
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <i class="fas fa-car text-red-400 mr-3"></i>
+                                <span>${item.textContent.trim()}</span>
+                            </div>
+                            <i class="fas fa-check-circle text-green-400"></i>
+                        </div>
+                    `;
+                    
+                    setTimeout(() => {
+                        item.innerHTML = `
+                            <div class="flex items-center">
+                                <i class="fas fa-car text-red-400 mr-3"></i>
+                                <span>${item.textContent.trim()}</span>
+                            </div>
+                        `;
+                    }, 1000);
+                }, 2000);
+            });
+        });
+        
+        // Pulse effect for important buttons
+        setInterval(() => {
+            const injectBtn = document.querySelector('.btn-money:nth-child(3)');
+            injectBtn.classList.toggle('pulse');
+        }, 4000);
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Ramiles/gtav" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
